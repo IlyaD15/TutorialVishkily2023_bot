@@ -1,10 +1,11 @@
-import telebot
+import telebot, os
 import requests as rq
 url_kurs = 'https://www.cbr-xml-daily.ru/daily_json.js'
 from time import time
-from hide_token import token
+from dotenv import load_dotenv
+load_dotenv()
 
-bot = telebot.TeleBot(token)
+bot = telebot.TeleBot(os.getenv("API_TOKEN"))
 
 kurs = dict()
 ok_time_kurs = time()
